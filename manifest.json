@@ -1,0 +1,10 @@
+{
+  "name": "Youdao Note",
+  "description": "Chrome Context Menus Extension for Youdao Note",
+  "version": "0.1",
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["youdaonote.js"]
+  },
+  "manifest_version": 2
+}
