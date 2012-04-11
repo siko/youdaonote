@@ -8,7 +8,19 @@ function YoudaoNoteOnClick(info, tab) {
               " was clicked, state is now: " + info.checked +
               "(previous state was " + info.wasChecked + ")");
 
-}
-var checkbox1 = chrome.contextMenus.create(
-  {"title": "Add to Youdao Note", "type": "normal", "onclick":YoudaoNoteOnClick});
+  CLIP_HOST='http://note.youdao.com/yws';
+  try{
+    var%20x=document.createElement('SCRIPT');
+    x.type='text/javascript';
+    x.src=CLIP_HOST+'/YNoteClipper.js?'+(new%20Date().getTime()/100000);
+    x.charset='utf-8';
+    document.getElementsByTagName('head')[0].appendChild(x);
+  }
+  catch(e){alert(e);}
 
+}
+
+
+var youdaonote = chrome.contextMenus.create(
+  {"title": "Add to Youdao Note", "type": "normal", "onclick":YoudaoNoteOnClick})
+console.log("youdaonote:" + youdaonote);
